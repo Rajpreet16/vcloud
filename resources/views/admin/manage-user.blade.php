@@ -34,3 +34,14 @@
     </table>    
   
     @endsection
+
+
+    
+    
+
+    
+    @section('Features')
+    <ul id="side-main-menu" class="side-menu list-unstyled">                  
+            <li><a href="{{route('Logged.admin')}}"> <i class="icon-home"></i>Home</a></li>
+            <li><a href="{{route('manage_user')}}"> <i class="icon-form"></i>Manage User</a></li>
+    @endsection

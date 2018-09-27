@@ -21,7 +21,7 @@
             <br><br>
             <div class="card" style="padding:25px; box-shadow:-1px 9px 40px -12px rgba(0,0,0,0.75) ">
             <div class="card-header"  style="background:#24b3ab; color:white;">Create Request</div>
-            {!! Form::open(['action' => 'LabController@store','method' =>'POST']) !!}
+            {!! Form::open(['action' => 'StaffController@store','method' =>'POST']) !!}
                 <div class='form-group'>
                     {{Form::label('item_name' , 'Item name')}}
                     {{Form::text('item_name','',['class'=>'form-control','placeholder'=>'Item Name'])}}

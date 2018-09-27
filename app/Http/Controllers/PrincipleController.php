@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
 use App\Requesst;
+use App\Lab_Component;
 use DB;
+
+use App\Exports\PrinciExport;
 use Auth;
 
 use Illuminate\Http\Request;
@@ -21,6 +24,7 @@ class PrincipleController extends Controller
         }
         
     }
+    
 
     public function export($type){
         if(auth()->check() && auth()->user()->is_p()) {

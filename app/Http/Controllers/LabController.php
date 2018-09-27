@@ -7,10 +7,15 @@ use App\Requests;
 use App\Lab;
 use App\Lab_Component;
 use DB;
+use App\Http\Resources\Lab_Component as Lab_ComponentResource;
 use Auth; 
 
 class LabController extends Controller
 {
+    public function index(){
+        $comp = Lab_Component::paginate(2);
+        return Lab_ComponentResource::collection($comp);
+    }
     public function create()
     {
         if(auth()->check() && auth()->user()->is_lab_ass()) {

@@ -6,6 +6,7 @@ use App\Exports\UsersExport;
 use Illuminate\Http\Request;
 use App\User;
 use DB;
+use PDF;
 use Auth;
 
 class HodController extends Controller
@@ -63,5 +64,4 @@ class HodController extends Controller
             return redirect()->route('wel');
         }
     }
-
 }

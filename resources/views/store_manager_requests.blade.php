@@ -1,5 +1,11 @@
 @extends('layouts.dashboard')
-
+@section('Features')
+<ul id="side-main-menu" class="side-menu list-unstyled">              
+        {{-- <li><a href="/store_manager/fill_indent">Fill Indent</a></li> --}}
+         <li><a href="/store_manager/history">History</a></li>
+        <li><a href="/store_manager/components">Acknowledge</a></li>
+        <li><a href="/store_manager/requests">Requests</a></li>
+@endsection
     @section('staff')
     <h1 class="add">StakeHolder</h1>
     <table class="table table-striped table-hover table-bordered" class="display" id="mydatatable">

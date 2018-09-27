@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\roles as roles;
-use App\department as departments;
+use App\department as department;
 use App\requests as requests;
 use DB;
 use Response;
@@ -61,7 +61,7 @@ class LoggedController extends Controller
             $role = roles::where('role_id',$role_id)->get();
             $role_des = $role[0]['role_name'];
             $branch_id = User::where('id',$id)->get()[0]['dept_id'];
-            $branch_details = departments::where('dept_id',$branch_id)->get();
+            $branch_details = department::where('dept_id',$branch_id)->get();
             $branch_des = $branch_details[0]['dept_name'];
             $total = DB::table('requests')->where('id',$id)->count();
             $current = DB::table('requests')->where('id',$id)->where('status_id',1)->count();
@@ -92,7 +92,7 @@ class LoggedController extends Controller
             $role = roles::where('role_id',$role_id)->get();
             $role_des = $role[0]['role_name'];
             $branch_id = User::where('id',$id)->get()[0]['dept_id'];
-            $branch_details = departments::where('dept_id',$branch_id)->get();
+            $branch_details = department::where('dept_id',$branch_id)->get();
             $branch_des = $branch_details[0]['dept_name'];
             $total = DB::table('requests')->where('id',$id)->count();
             $current = DB::table('requests')->where('id',$id)->where('status_id',1)->count();
@@ -123,7 +123,7 @@ class LoggedController extends Controller
             $role = roles::where('role_id',$role_id)->get();
             $role_des = $role[0]['role_name'];
             $branch_id = User::where('id',$id)->get()[0]['dept_id'];
-            $branch_details = departments::where('dept_id',$branch_id)->get();
+            $branch_details = department::where('dept_id',$branch_id)->get();
             $branch_des = $branch_details[0]['dept_name'];
             $total = DB::table('requests')->where('id',$id)->count();
             $current = DB::table('requests')->where('id',$id)->where('status_id',1)->count();
@@ -156,7 +156,7 @@ class LoggedController extends Controller
             $role = roles::where('role_id',$role_id)->get();
             $role_des = $role[0]['role_name'];
             $branch_id = User::where('id',$id)->get()[0]['dept_id'];
-            $branch_details = departments::where('dept_id',$branch_id)->get();
+            $branch_details = department::where('dept_id',$branch_id)->get();
             $branch_des = $branch_details[0]['dept_name'];
             $total = DB::table('requests')->where('id',$id)->count();
             $current = DB::table('requests')->where('id',$id)->where('status_id',1)->count();
@@ -187,7 +187,7 @@ class LoggedController extends Controller
             $role = roles::where('role_id',$role_id)->get();
             $role_des = $role[0]['role_name'];
             $branch_id = User::where('id',$id)->get()[0]['dept_id'];
-            $branch_details = departments::where('dept_id',$branch_id)->get();
+            $branch_details = department::where('dept_id',$branch_id)->get();
             $branch_des = $branch_details[0]['dept_name'];
             $total = DB::table('requests')->where('id',$id)->count();
             $current = DB::table('requests')->where('id',$id)->where('status_id',1)->count();

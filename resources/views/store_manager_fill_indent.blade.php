@@ -1,14 +1,19 @@
-
- @extends('layouts.app')
-
-@section('content')
+ @extends('layouts.dashboard')
+ @section('Features')
+ <ul id="side-main-menu" class="side-menu list-unstyled">              
+         {{-- <li><a href="/store_manager/fill_indent">Fill Indent</a></li> --}}
+          <li><a href="/store_manager/history">History</a></li>
+         <li><a href="/store_manager/components">Acknowledge</a></li>
+         <li><a href="/store_manager/requests">Requests</a></li>
+ @endsection
+@section('staff')
 <style>
 .colorsection{
     background-color: #24B3AB;
 }
 </style>
+<br><br>
 <div class="container">
-    <a class="btn btn-primary" href="/store_manager/requests">Back To Home</a>
     <div class="row justify-content-center">
         <div class="col-md-8">
             {{-- <div class="card"> --}}

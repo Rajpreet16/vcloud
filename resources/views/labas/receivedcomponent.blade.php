@@ -1,11 +1,16 @@
 
 @extends('layouts.dashboard')
-
+@section('Features')
+<ul id="side-main-menu" class="side-menu list-unstyled">              
+        <li><a href="/lab_as/request">Create Request</a></li>
+        <li><a href="/lab_as/history">Request History</a></li>
+        <li><a href="/lab_as/labcomponent">Lab Component</a></li>
+        <li><a href="/lab_as/received-component">Received Components</a></li>
+@endsection
 @section('staff')<br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-                <a href="/lab_as" class= "btn" style="background:#24b3ab; color:white">Back To Home</a>
                 <br>
                 <br>
                 <h3>Received Components</h3>

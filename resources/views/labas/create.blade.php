@@ -1,14 +1,18 @@
 
 @extends('layouts.dashboard')
-
+@section('Features')
+<ul id="side-main-menu" class="side-menu list-unstyled">              
+        <li><a href="/lab_as/request">Create Request</a></li>
+        <li><a href="/lab_as/history">Request History</a></li>
+        <li><a href="/lab_as/labcomponent">Lab Component</a></li>
+        <li><a href="/lab_as/received-component">Received Components</a></li>
+@endsection
 @section('staff')<br><br>
 
 <div class="container">
     
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <a class="btn" style="background:#24b3ab; color:white;" href="/lab_as">Back To Home</a>
-            <br><br>
             <div class="card" style="padding:25px; box-shadow:-1px 9px 40px -12px rgba(0,0,0,0.75) ">
             <div class="card-header" style="background:#24b3ab; color:white;">Create Request</div>
             {!! Form::open(['action' => 'LabController@store','method' =>'POST']) !!}

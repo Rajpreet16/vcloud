@@ -228,13 +228,15 @@ class LoggedController extends Controller
             $branch_id = User::where('id',$id)->get()[0]['dept_id'];
      $request_from_dept = DB::select("SELECT a.name,a.dept_id,b.item_name,b.item_count,b.request_id
             FROM users AS a inner join requests b
-                      ON a.id = b.id and a.dept_id=$branch_id and b.status_id=1 and b.role_id=1");
+                      ON a.id = b.id and a.dept_id=$branch_id and b.status_id=1 ");
 
              
-            $request1 = DB::select("select * from requests where request_type = 0 and id in(select id from users where dept_id = $branch_id and role_id = 1) and status_id =1");
-            $request2 = DB::select("select * from requests where request_type = 1 and id in(select id from users where role_id = 1) and status_id =1");
-            $arr = array_merge($request1,$request2);
-            return view('staffR')->with('data',$arr);
+            // $request1 = DB::select("select * from requests where request_type = 0 and id in(select id from users where dept_id = $branch_id and role_id = 1) and status_id =1");
+            // $request2 = DB::select("select * from requests where request_type = 1 and id in(select id from users where role_id = 1) and status_id =1");
+            // $arr = array_merge($request1,$request2);
+            // return $request_from_dept;
+            // return view('staffR')->with('data',$arr);
+            
             return view('staffR')->with('data',$request_from_dept);
         }
         else{
@@ -441,7 +443,7 @@ class LoggedController extends Controller
         }
     }
 
-    public function send_req_to_lab(Request $request,$req_id,$avail_id){
+    public function send_req_to_lab(Request $request){
         if(auth()->check() && auth()->user()->is_do()) {
             $id = Auth::id();
             $request1 = DB::select("update requests set status_id =9  where request_id = $req_id");
@@ -453,6 +455,17 @@ class LoggedController extends Controller
             return redirect()->route('wel');
         }
     }
+
+    public function ack_req_from_staff(Request $request,$req_id,$avail_id){
+        if(auth()->check() && auth()->user()->is_staff()) {
+            return 1;
+        }
+        else{
+            return redirect()->route('wel');
+        }
+    }
+
+    
     
 }
 

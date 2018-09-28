@@ -37,7 +37,7 @@
                                     Approved by HOD
                                 @endif
                                 @if($value->status_id === 4)
-                                    Approved by Principle
+                                    Approved by Principal
                                 @endif
                                 @if($value->status_id === 5)
                                     Order Placed

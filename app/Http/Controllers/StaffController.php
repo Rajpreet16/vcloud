@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Staff;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use App\Requests;
 
 class StaffController extends Controller
 {
@@ -23,6 +24,7 @@ class StaffController extends Controller
 
     public function store(Request $request)
     {
+        // return 1;
         $this->validate($request,[
             'item_name' => 'required',
             'item_count'  => 'required',
@@ -34,6 +36,7 @@ class StaffController extends Controller
         $requests->request_type = 0;
         $requests->status_id = 1;
         $requests->save();
+        
         return redirect('/staff');
     }
 

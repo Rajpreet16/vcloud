@@ -293,4 +293,8 @@ Route::get('/labR/send_request/{req_id}/{avail_id}', [
     'as' => 'send.req.to.lab',
     'middleware' => 'auth'
 ]);
-
+Route::get('/staff/acknowledge-request', [
+    "uses" => 'LoggedController@ack_req_from_staff',
+    'as' => 'ack.req.to.staff',
+    'middleware' => 'auth'
+]);

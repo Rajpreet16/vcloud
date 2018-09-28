@@ -7,6 +7,7 @@
         <li><a href="/staff/history">Request History</a></li>
         <li><a href="/staff/staffcomponent">Staff component</a></li>
         <li><a href="/staff/received-component">Received Component</a></li>
+        {{-- <li><a href="/staff/acknowledge-request">Acknowledge Request</a></li> --}}
 @endsection
 
 

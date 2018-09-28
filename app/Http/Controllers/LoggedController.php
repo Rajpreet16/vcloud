@@ -443,7 +443,7 @@ class LoggedController extends Controller
         }
     }
 
-    public function send_req_to_lab(Request $request,$req_id,$avail_id){
+    public function send_req_to_lab(Request $request){
         if(auth()->check() && auth()->user()->is_do()) {
             $id = Auth::id();
             $request1 = DB::select("update requests set status_id =9  where request_id = $req_id");
@@ -455,6 +455,17 @@ class LoggedController extends Controller
             return redirect()->route('wel');
         }
     }
+
+    public function ack_req_from_staff(Request $request,$req_id,$avail_id){
+        if(auth()->check() && auth()->user()->is_staff()) {
+            return 1;
+        }
+        else{
+            return redirect()->route('wel');
+        }
+    }
+
+    
     
 }
 
